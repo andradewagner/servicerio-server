@@ -7,7 +7,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/places', function(req, res, next) {
-  res.json([{title:'Restaurantes', image:'restaurante', link: 'restaurantes'}, {title:'Pet Shops', image:'petshop', link: 'petshops'}, {title:'Vidraçarias', image:'vidracaria', link: 'vidracarias'}, {title:'Marcenarias', image:'marcenaria', link: 'marcenarias'}]);
+  categorias = new db();
+  res.json(categorias.categoriaEmpresas);
 });
 
 router.get('/places/restaurantes', function(req, res, next) {
