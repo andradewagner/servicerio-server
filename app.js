@@ -10,6 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var quem_somos = require('./routes/quem_somos');
 var team = require('./routes/team');
+var cadastrar = require('./routes/cadastrar');
 var fale_conosco = require('./routes/fale_conosco');
 
 var app = express();
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/users', users);
 app.use('/api/quem_somos', quem_somos);
 app.use('/api/team', team);
+app.use('/api/cadastrar', cadastrar);
 app.use('/api/fale_conosco', fale_conosco);
 
 // In production, we'll actually serve our angular app from express
