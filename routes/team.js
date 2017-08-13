@@ -11,8 +11,9 @@ router.get('/places', function(req, res, next) {
   res.json(categorias.categoriaEmpresas);
 });
 
-router.get('/places/restaurantes', function(req, res, next) {
+router.get('/places/categoria', function(req, res, next) {
   rest = new db();
+  rest.categoria(req.query.tipo);
   res.json(rest.restaurantes);
 });
 
