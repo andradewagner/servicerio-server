@@ -15,8 +15,15 @@ router.get('/places/restaurantes', function(req, res, next) {
   res.json(rest.restaurantes);
 });
 
-router.get('/professionals', function(req, res, next) {
-  res.json(['Tradutores', 'Técnicos de computadores', 'Eletricistas', 'Padeiros']);
+router.get('/profissionais', function(req, res, next) {
+  prof = new db();
+  res.json(prof.categoriaProfissionais);
+});
+
+router.get('/profissionais/categoria', function(req, res, next) {
+  prof = new db();
+  prof.categoria(req.query.tipo);
+  res.json(prof.profissionais);
 });
 
 module.exports = router;
